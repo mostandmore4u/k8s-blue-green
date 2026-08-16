@@ -1,26 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-green
+  name: nginx-blue
   labels:
-    version: green
+    version: blue
     app: nginx
 spec:
   replicas: 4
   selector:
     matchLabels:
-      version: green
+      version: blue
       app: nginx
   # Pod
   template:
     metadata:
       labels:
-        version: green
+        version: blue
         app: nginx
     spec:
       containers:
       - name: nginx
-        image: mostandmore/blue-green:0.3.0 # NOTE im not doing 0.1.0 or 0.2.0 versions , i started with 0.3.0v
+        image: mostandmore/blue-green:0.4.0 # NOTE im not doing 0.1.0 or 0.2.0 versions , i started with 0.3.0v
         imagePullPolicy: Always
         ports:
         - containerPort: 80
