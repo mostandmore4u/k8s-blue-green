@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-green
+  name: nginx-blue
   labels:
-    version: green
+    version: blue
     app: nginx
 spec:
   replicas: 4
   selector:
     matchLabels:
-      version: green
+      version: blue
       app: nginx
   # Pod
   template:
     metadata:
       labels:
-        version: green
+        version: blue
         app: nginx
     spec:
       containers:
